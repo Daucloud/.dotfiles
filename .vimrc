@@ -127,3 +127,22 @@ let g:ycm_seed_identifiers_with_syntax=1
 set encoding=utf-8
 
 set clipboard=unnamed
+
+" Quickly Run
+
+map <F5> :call CompileRunGcc()<CR>
+
+func! CompileRunGcc()
+    exec "w" 
+    if &filetype == 'c' 
+        exec '!g++ % -o %<'
+       " exec '!time ./%<'
+    elseif &filetype == 'cpp'
+        exec '!g++ % -o %<'
+       " exec '!time ./%<'
+    elseif &filetype == 'python'
+       " exec '!time python %'
+    elseif &filetype == 'sh'
+        :!time bash %
+    endif                                                                              
+endfunc 

@@ -109,6 +109,10 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+ 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
+
+#alias
+alias gla="git log --all --graph --decorate --oneline"
+alias python="python3"
