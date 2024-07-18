@@ -115,7 +115,7 @@ bindkey '^N' history-substring-search-down
 
 #alias
 alias gla="git log --all --graph --decorate --oneline"
-alias py="python3.11"
+alias python="python3"
 # Start tmux automatically
 if command -v tmux>/dev/null; then
    [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
@@ -126,4 +126,3 @@ bindkey -v
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export PATH="$HOME/.local/bin:$PATH"
-
