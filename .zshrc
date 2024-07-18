@@ -77,7 +77,7 @@ zstyle ':omz:update' frequency 13
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract rand-quote z vi-mode command-not-found colored-man-pages sudo history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git extract rand-quote z command-not-found colored-man-pages sudo history-substring-search zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,6 +109,21 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
+ 
 bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
+
+#alias
+alias gla="git log --all --graph --decorate --oneline"
+alias py="python3.11"
+# Start tmux automatically
+if command -v tmux>/dev/null; then
+   [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
+fi
+# Enable vi mode
+bindkey -v
+# Enable Chinese
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export PATH="$HOME/.local/bin:$PATH"
+
