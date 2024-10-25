@@ -1,6 +1,12 @@
 #!/usr/bin/bash
 
-files=($(ls -1a | grep -E "^\..+$" | grep -Ev "^\.\.$|^\.git$"))
+files=(
+	'.bashrc'
+	'.zshrc'
+	'.vimrc'
+	'.tmux.conf'
+      )
+
 for file in "${files[@]}"; do
 	ln -s $(pwd)/$file ~/$file
 	if [ -e "$HOME/$file" ]; then
